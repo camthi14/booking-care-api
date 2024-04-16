@@ -157,7 +157,7 @@ class BookingService {
         }
 
         // * Kiểm tra email.
-        await emailService.validationEmail(data.email, `E-mail ${data.email} Không hợp lệ!`);
+        // await emailService.validationEmail(data.email, `E-mail ${data.email} Không hợp lệ!`);
 
         sql = SQLString.format(
           "SELECT CONCAT(u.first_name, ' ', u.last_name) AS doctor_name, c.clinic_name, s.specialty_name FROM `users` u JOIN clinics c ON u.user_id = ? AND u.clinic_id=c.clinic_id JOIN specialties s ON u.specialty_id=s.specialty_id;",
